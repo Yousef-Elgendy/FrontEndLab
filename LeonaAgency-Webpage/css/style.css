@@ -1,13 +1,19 @@
+/* ============================
+   CSS VARIABLES & CUSTOM PROPERTIES
+   ============================ */
 :root {
     --primary-color: #10cab7;
     --secondary-color: #2c4755;
-    --light-heading-color:#ebeced;
+    --light-heading-color: #ebeced;
     --light-paragraph-color: #797979;
     --text-color: #333;
     --background-color: #fff;
     --section-background-color: #f6f6f6;
 }
-/* Global Styles */
+
+/* ============================
+   RESET & GLOBAL STYLES
+   ============================ */
 * {
     margin: 0;
     padding: 0;
@@ -18,28 +24,12 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
-    padding:0;
+    padding: 0;
 }
 
-/* Skip Link for Accessibility */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 6px;
-    background: var(--primary-color);
-    color: white;
-    padding: 8px;
-    text-decoration: none;
-    border-radius: 4px;
-    z-index: 1000;
-    font-weight: bold;
-}
-
-.skip-link:focus {
-    top: 6px;
-}
-
-/* Container */
+/* ============================
+   LAYOUT & CONTAINER
+   ============================ */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -49,7 +39,9 @@ body {
     align-items: center;
 }
 
-/* Header Styles */
+/* ============================
+   HEADER & NAVIGATION
+   ============================ */
 header {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -148,7 +140,9 @@ header {
     transform: translateY(0);
 }
 
-/* Landing Section */
+/* ============================
+   LANDING SECTION
+   ============================ */
 .landing {
     background-image: url('../assets/images/landing.jpg');
     background-size: cover;
@@ -181,7 +175,9 @@ header {
     color: var(--text-color);
 }
 
-/* Features Section */
+/* ============================
+   FEATURES SECTION
+   ============================ */
 .features {
     padding: 60px 0;
     background-color: var(--section-background-color);
@@ -239,7 +235,9 @@ header {
     display: block;
 }
 
-/* Services Section */
+/* ============================
+   SERVICES SECTION
+   ============================ */
 .services {
     padding: 60px 0;
     background-color: white;
@@ -290,6 +288,7 @@ header {
     position: relative;
     z-index: 2;
 }
+
 .image-rectangle {
     position: absolute;
     width: 30%;
@@ -299,7 +298,6 @@ header {
     background-color: var(--secondary-color);
     z-index: 1;
 }
-
 
 .service {
     display: flex;
@@ -342,7 +340,9 @@ header {
     font-size: 0.95rem;
 }
 
-/* Portfolio Section */
+/* ============================
+   PORTFOLIO SECTION
+   ============================ */
 .portfolio {
     padding: 60px 0;
     background-color: var(--section-background-color);
@@ -412,7 +412,9 @@ header {
     font-size: 0.95rem;
 }
 
-/* About Section */
+/* ============================
+   ABOUT SECTION
+   ============================ */
 .about {
     padding: 60px 0;
     background-color: white;
@@ -466,7 +468,6 @@ header {
     width: 25%;
     height: 100%;
     left: 15%;
-
     background-color: var(--primary-color);
     z-index: 1;
 }
@@ -476,17 +477,16 @@ header {
     width: 25%;
     height: 80%;
     right: 15%;
-    top:0;
+    top: 0;
     background-color: var(--secondary-color);
     z-index: 2;
 }
 
-.about-text{
+.about-text {
     flex: 2;
     text-align: left;
     padding: 0 20px;
 }
-
 
 .about-text p {
     color: var(--light-paragraph-color);
@@ -494,15 +494,18 @@ header {
     font-size: 1rem;
     margin-bottom: 25px;
 }
-.about-text hr{
+
+.about-text hr {
     margin-bottom: 20px;
-    width:40%; 
-    background-color:var(--primary-color);
+    width: 40%;
+    background-color: var(--primary-color);
     height: 2px;
     border: none;
 }
 
-/* Contact Section */
+/* ============================
+   CONTACT SECTION
+   ============================ */
 .contact {
     padding: 60px 0;
     background-color: var(--section-background-color);
@@ -584,7 +587,9 @@ header {
     color: #FF0000;
 }
 
-/* Footer */
+/* ============================
+   FOOTER
+   ============================ */
 footer {
     background-color: var(--secondary-color);
     padding: 30px 0;
@@ -601,8 +606,24 @@ footer p {
     margin: 0;
 }
 
-/* Responsive Design for Services */
+/* ============================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ============================ */
+
+/* Tablet & Mobile (768px and below) */
 @media (max-width: 768px) {
+    /* Features Section */
+    .features .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .feature-box {
+        min-width: auto;
+        flex: none;
+    }
+    
+    /* Services Section */
     .services-content {
         flex-direction: column;
         gap: 30px;
@@ -617,58 +638,24 @@ footer p {
         display: none; /* Hide image on small screens */
     }
     
-    .services h2 {
-        font-size: 60px;
-    }
-    
-    .features h2 {
-        font-size: 60px;
-    }
-    
-    .services .container > p {
-        margin-top: -50px;
-        font-size: 16px;
-    }
-    
-    .portfolio h2 {
-        font-size: 60px;
-    }
-    
-    .portfolio .container > p {
-        margin-top: -50px;
-        font-size: 16px;
-    }
-    
-    .about h2 {
-        font-size: 60px;
-    }
-    
-    .about .container > p {
-        margin-top: -50px;
-        font-size: 16px;
-    }
-    
+    /* Common Section Adjustments */
+    .services h2,
+    .features h2,
+    .portfolio h2,
+    .about h2,
     .contact h2 {
         font-size: 60px;
     }
     
+    .services .container > p,
+    .portfolio .container > p,
+    .about .container > p,
     .contact .container > p {
         margin-top: -50px;
         font-size: 16px;
     }
     
-    .contact-email {
-        font-size: 1.4rem;
-    }
-    
-    .social-text {
-        font-size: 1rem;
-    }
-    
-    .social-icons i {
-        font-size: 1.8rem;
-    }
-    
+    /* About Section */
     .about-content {
         flex-direction: column;
         gap: 30px;
@@ -682,22 +669,43 @@ footer p {
         padding: 0;
         text-align: center;
     }
+    
+    /* Contact Section */
+    .contact-email {
+        font-size: 1.4rem;
+    }
+    
+    .social-text {
+        font-size: 1rem;
+    }
+    
+    .social-icons i {
+        font-size: 1.8rem;
+    }
 }
 
+/* Mobile (480px and below) */
 @media (max-width: 480px) {
-    .services h2 {
-        font-size: 40px;
+    /* Features Section */
+    .features {
+        padding: 40px 0;
     }
     
-    .features h2 {
-        font-size: 40px;
+    .feature-box {
+        padding: 30px 15px;
     }
     
-    .services .container > p {
-        margin-top: -30px;
-        font-size: 14px;
+    .feature-box i {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
     }
     
+    .feature-box h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    /* Services Section */
     .service {
         padding: 20px;
     }
@@ -711,50 +719,24 @@ footer p {
         display: none; /* Ensure image stays hidden on very small screens */
     }
     
-    .portfolio h2 {
-        font-size: 40px;
-    }
-    
-    .portfolio .container > p {
-        margin-top: -30px;
-        font-size: 14px;
-    }
-    
-    .about h2 {
-        font-size: 40px;
-    }
-    
-    .about .container > p {
-        margin-top: -30px;
-        font-size: 14px;
-    }
-    
+    /* Common Section Adjustments */
+    .services h2,
+    .features h2,
+    .portfolio h2,
+    .about h2,
     .contact h2 {
         font-size: 40px;
     }
     
+    .services .container > p,
+    .portfolio .container > p,
+    .about .container > p,
     .contact .container > p {
         margin-top: -30px;
         font-size: 14px;
     }
     
-    .contact-email {
-        font-size: 1.2rem;
-    }
-    
-    .social-text {
-        font-size: 0.9rem;
-    }
-    
-    .social-icons {
-        gap: 15px;
-    }
-    
-    .social-icons i {
-        font-size: 1.5rem;
-        padding: 8px;
-    }
-    
+    /* About Section */
     .about-image {
         min-height: 250px;
     }
@@ -772,37 +754,22 @@ footer p {
     .about-text p {
         font-size: 0.9rem;
     }
-}
-
-/* Responsive Design for Features */
-@media (max-width: 768px) {
-    .features .container {
-        flex-direction: column;
-        gap: 20px;
+    
+    /* Contact Section */
+    .contact-email {
+        font-size: 1.2rem;
     }
     
-    .feature-box {
-        min-width: auto;
-        flex: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .features {
-        padding: 40px 0;
+    .social-text {
+        font-size: 0.9rem;
     }
     
-    .feature-box {
-        padding: 30px 15px;
+    .social-icons {
+        gap: 15px;
     }
     
-    .feature-box i {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-    }
-    
-    .feature-box h3 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
+    .social-icons i {
+        font-size: 1.5rem;
+        padding: 8px;
     }
 }

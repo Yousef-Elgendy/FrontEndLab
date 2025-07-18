@@ -1,6 +1,7 @@
 /* variables */
 :root{
     --primary-color: #00C7FC;
+    --transparent-color: rgb(15 116 143 / 60%);
     --light-color:#DEDADC;
     --third-color: #19C8FA;
 }
@@ -13,7 +14,6 @@
 }
 html{
     scroll-behavior: smooth;
-    background-color: black;
 }
 /* Container Base Styles */
 .container{
@@ -36,6 +36,10 @@ header .header-content{
     min-height: 84px;
     color: white;
 }
+.logo{
+    position: relative;
+    z-index: 2;
+}
 header .header-content::after{
     content: '';
     position: absolute;
@@ -44,6 +48,7 @@ header .header-content::after{
     bottom: 0;
     height: 1px;
     background-color: var(--light-color);
+    z-index: 1;
 }
 .header-content nav{
     flex: 1;
@@ -54,6 +59,7 @@ header .header-content::after{
 
 .burger-icon{
     cursor: pointer;
+    z-index: 3;
 }
 @media screen and (min-width: 768px) {
     .burger-icon{
@@ -82,6 +88,7 @@ header .header-content::after{
         position:absolute;
         top: 100%;
         width: 100%;
+        z-index: 3;
     }
 }
 nav ul{
@@ -91,8 +98,6 @@ nav ul{
 nav ul li{
     list-style: none;
 }
-
-
 nav ul li a{
     display: block;
     padding: 32px 16px;
@@ -116,6 +121,124 @@ nav ul li a:hover{
     padding: 8px 16px;
     color: white;
     border-left: solid white 2px;
+    z-index: 3;
+}
+/* Landing Section */
+.landing {
+    background-image: url('../images/landing.jpg');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.landing::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.landing .text{
+    display:flex;
+    justify-content: flex-end;
+}
+.landing .content{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--transparent-color);
+    width: 60%;
+    height: 30%;
+    padding: 50px;
+    color: white;
+    z-index: 2;
+    line-height: 1.5;
 }
 
+@media screen and (max-width: 768px) {
+    .landing .content{
+        width: 100%;
+        height: 30%;
+        padding: 40px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 480px) {
+    .landing .content{
+        width: 100%;
+        height: 40%;
+        padding: 40px;
+        text-align: center;
+    }
+    .landing .text{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 360px) {
+    .landing .content{
+        width: 100%;
+        height: 40%;
+        padding: 30px;
+        text-align: center;
+    }
+    .landing .text{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+@media screen and (m-width: 320px) {
+    .landing .content{
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+    .landing .text{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.landing .arrow-left,.landing .arrow-right{
+    font-size: 30px;
+    position:absolute;
+    top: 50%;
+    z-index: 3;
+    transform: translateY(-50%);
+    color: #DDD;
+}
+.arrow-left{
+    left: 10px;
+}
+.arrow-right{
+    right: 10px;
+}
+.bullets{
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+.bullets li{
+    width: 20px;
+    height: 20px;
+    border: solid white 1px;
+    border-radius: 50%;
+    color: transparent;
+    margin-right: 10px;
+}
+.bullets li.active{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
 

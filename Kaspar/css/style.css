@@ -343,3 +343,62 @@ nav ul li a:hover{
     }
 }
 
+/* Design Section */
+.design{
+    width: 100%;
+    height: 80vh;
+    background-image: url('../images/design-features.jpg');
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    z-index: -2;
+}
+.design::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+.design-photo{
+    position: absolute;
+    bottom: -70px;
+    left: 4%;
+}
+.design-text{
+    padding: 50px;
+    background-color: var(--transparent-color);
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    color: white;
+    font-weight: bold;
+}
+.design-text h2{
+    padding-bottom: 40px;
+}
+.design-item{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+@media  screen and (max-width: 768px) {
+    .design{
+        height: 60vh;
+    }
+    .design-photo{
+        display: none;
+    }
+    .design-text{
+        width: 100%;
+    }
+    
+}
+
+
+

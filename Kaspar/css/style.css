@@ -601,6 +601,17 @@ nav ul li a:hover{
     font-size: 38px;
     margin-bottom: 20px;
 }
+@media screen and (max-width: 830px) {
+    .second-about .about-us{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-us .about-item{
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+    
+}
 
 
 

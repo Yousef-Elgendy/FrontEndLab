@@ -64,7 +64,7 @@ html{
 }
 /* Container Base Styles */
 .container{
-    width:90%;
+    width:80%;
     max-width: 1200px;
     margin: 0 auto;
     padding:0 16px;
@@ -613,6 +613,131 @@ nav ul li a:hover{
     
 }
 
+/* Feedback and Skills */
 
+.feedback-and-skills{
+    padding: var(--section-padding) 0;
+}
+.feedback-and-skills .container{
+    display: flex;
+    justify-content: space-between;
+    gap: min(50px, 8%);
+}
+.feedback-and-skills h3{
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.feedback-and-skills .pref{
+    color: var(--light-color);
+    text-align: center;
+    margin-bottom: 40px;
+
+}
+.feedback-and-skills img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.feedback-item{
+    display: flex;
+    gap: min(20px, 5%);
+    margin-bottom: 50px;
+}
+.feedback-item p{
+    line-height: 1.5;
+}
+.feedback-item .name{
+    color:var(--light-color);
+    margin: 10px 0;
+    text-align: end;
+}
+.feedback-bullets{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 20px 0;
+}
+.feedback-bullets span{
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--light-color);
+    border-radius: 50%;
+}
+.feedback-bullets span.active{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+/* Skills */
+.skill-item p{
+    margin: 10px 0;
+}
+.skill-item .bar{
+    width: 100%;
+    height: 25px;
+    background-color: var(--light-color);
+}
+.skill-item .bar .active-bar1, .active-bar2, .active-bar3, .active-bar4{
+    height: 25px;
+    background-color: var(--primary-color);
+    position: relative;
+}
+.active-bar1{
+    width: 70%;
+}
+.active-bar2{
+    width: 85%;
+}
+.active-bar3{
+    width: 80%;
+}
+.active-bar4{
+    width: 90%;
+}
+.percentage {
+    background-color: black;
+    position: absolute;
+    right: -16px;
+    top: -30px;
+    padding: 0 4px;
+    border-radius: 3px;
+
+}
+.percentage p{
+    margin: 0;
+    color: white;
+}
+
+.percentage ::after{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 8px;
+    border-color: black transparent transparent;
+    bottom: -16px;
+    left: calc(50% - 5px);
+    z-index: -2;
+}
+
+@media screen and (max-width: 768px) {
+    .feedback-and-skills .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .feedback-and-skills .pref{
+        width: 100%;
+        max-width: 500px;
+    }
+    .feedback-item{
+        flex-direction: column;
+        align-items: center;
+    }
+    .skill-item{
+        width: 100%;
+        max-width: 500px;
+    }
+    
+}
 
 
